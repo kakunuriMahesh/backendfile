@@ -1,29 +1,31 @@
-// const express = require("express");
-// const app = express();
-// const mongoose = require("mongoose");
-// const jwt = require("jsonwebtoken");
-// const multer = require("multer");
-// const path = require("path");
-// const cors = require("cors");
-// // const { error } = require("console");
-// require("dotenv").config(); // Load environment variables
-// const port  =process.env.PORT ||  4000
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const multer = require("multer");
+const path = require("path");
+const cors = require("cors");
+// const { error } = require("console");
+require("dotenv").config(); // Load environment variables
+const port  =process.env.PORT ||  4000
 
 
-// app.use(express.json());
-// app.use(cors());
+app.use(express.json());
+app.use(cors());
 
-// // Database connection with MongoDB
+// Database connection with MongoDB
 
 // mongoose.connect("mongodb://maheshkakunuri9:MongoDB1020@ac-w9ifaij-shard-00-00.rou1pon.mongodb.net:27017,ac-w9ifaij-shard-00-01.rou1pon.mongodb.net:27017,ac-w9ifaij-shard-00-02.rou1pon.mongodb.net:27017/?replicaSet=atlas-m1c3kt-shard-0&ssl=true&authSource=admin")
 
-// // API creation
+mongoose.connect(process.env.MONGODB_URI)
 
-// app.get("/",(req, res)=>{
-//     res.send("Express app is Running")
-// })
-// //////////////////////////////
-// //Image Storage Engine
+// API creation
+
+app.get("/",(req, res)=>{
+    res.send("Express app is Running")
+})
+//////////////////////////////
+//Image Storage Engine
 
 // const storage = multer.diskStorage({
 //     destination: './upload/images',
@@ -277,16 +279,16 @@
     
 // })
 
-// //////////////////////////
-// app.listen(port, (error)=>{
-//     if (!error){
-//         console.log("Server Running on Port "+port);
-//     }
-//     else{
-//         console.log("Error:" +error);
-//     }
-// })
+//////////////////////////
+app.listen(port, (error)=>{
+    if (!error){
+        console.log("Server Running on Port "+port);
+    }
+    else{
+        console.log("Error:" +error);
+    }
+})
 
 
 
-// // mongodb+srv://maheshkakunuri9:MongoDB1020@cluster0.rou1pon.mongodb.net/
+// mongodb+srv://maheshkakunuri9:MongoDB1020@cluster0.rou1pon.mongodb.net/
