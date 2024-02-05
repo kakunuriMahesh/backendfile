@@ -1,5 +1,5 @@
 require('dotenv').config();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 console.log(port)
 // Rest of your code...
