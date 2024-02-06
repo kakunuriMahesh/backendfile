@@ -8,7 +8,9 @@ const cors = require("cors");
 // const { error } = require("console");
 require("dotenv").config(); // Load environment variables
 const port = process.env.PORT ||  4000
-HOST_API = `http://localhost:${port}`
+// const HOST_API = `http://localhost:${port}`
+const HOST_API = 'https://backendtrail-c9e064212bae.herokuapp.com'
+console.log(HOST_API);
 
 app.use(express.json());
 app.use(cors());
