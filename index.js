@@ -8,7 +8,7 @@ const cors = require("cors");
 // const { error } = require("console");
 require("dotenv").config(); // Load environment variables
 const port = process.env.PORT ||  4000
-
+HOST_API = `http://localhost:${port}`
 
 app.use(express.json());
 app.use(cors());
@@ -40,7 +40,8 @@ const upload = multer({storage:storage})
 app.use('/images', express.static('upload/images'))
 
 app.post("/upload", upload.single('product'), (req, res) => {
-    const imageUrl = `http://localhost:${port}/images/${req.file.filename}`;
+    const imageUrl = `${HOST_API}/images/${req.file.filename}`;
+    console.log(imageUrl);
 
     res.json({
         success: 1,
