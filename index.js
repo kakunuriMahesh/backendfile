@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI)
 // API creation
 
 app.get("/",(req, res)=>{
-    res.send("Express app is Running")
+    res.send("Express app is Running Heroku")
 })
 //////////////////////////////
 // Image Storage Engine
